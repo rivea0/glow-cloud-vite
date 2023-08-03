@@ -1,0 +1,360 @@
+@font-face {
+  font-family: 'Averia Libre';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/averialibre/v16/2V0FKIcMGZEnV6xygz7eNjEarovtbw.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/poppins/v20/pxiByp8kv8JHgFVrLDz8V1s.ttf) format('truetype');
+}
+.linear-gradient-text-color {
+  color: #f8de7e;
+  background-image: -webkit-linear-gradient(45deg, #f8de7e 25%, #a17ef8 85%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  text-fill-color: transparent;
+  -webkit-text-fill-color: transparent;
+}
+.bg-image {
+  background: url(src/assets/mostly-void.jpeg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+}
+.btn-clear {
+  background: none;
+  border: none;
+}
+.flex-column {
+  display: flex;
+  flex-direction: column;
+}
+.align-centered-column-flex {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.justify-centered-flex {
+  display: flex;
+  justify-content: center;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  width: 100%;
+  height: 100vh;
+  background: url(src/assets/mostly-void.jpeg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  font-family: 'Poppins', sans-serif;
+  color: #fff;
+}
+button:hover {
+  cursor: pointer;
+}
+li {
+  list-style: none;
+}
+hr {
+  width: 100%;
+}
+.header {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5rem;
+}
+.header .logo {
+  background: rgba(0, 0, 0, 0.1);
+}
+.logo-sub {
+  color: #f8de7e;
+  background-image: -webkit-linear-gradient(45deg, #f8de7e 25%, #a17ef8 85%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  text-fill-color: transparent;
+  -webkit-text-fill-color: transparent;
+  font-size: smaller;
+  font-family: 'Averia Libre', cursive;
+}
+.about {
+  display: flex;
+  align-items: center;
+  padding: 0.25rem 0;
+}
+.about-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.about-text {
+  filter: blur(0);
+  display: flex;
+  flex-direction: column;
+  color: #fff;
+  align-items: flex-start;
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 2rem;
+}
+.about-btn,
+.goBackBtn {
+  background: none;
+  border: none;
+}
+.goBackBtn {
+  color: #f8de7e;
+  text-decoration: underline;
+  margin-top: 2rem;
+  font-size: initial;
+}
+.logo-title a,
+.about-btn a {
+  color: #f8de7e;
+  background-image: -webkit-linear-gradient(45deg, #f8de7e 25%, #a17ef8 85%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  text-fill-color: transparent;
+  -webkit-text-fill-color: transparent;
+  text-decoration: none;
+  font-family: 'Averia Libre', cursive;
+}
+.about-btn a {
+  font-size: 1rem;
+}
+.about-btn a:hover {
+  text-decoration: underline;
+}
+.show {
+  visibility: visible;
+  z-index: 2;
+  position: absolute;
+  top: 4rem;
+}
+.hide {
+  visibility: hidden;
+}
+.link {
+  color: #a17ef8;
+  text-decoration: none;
+}
+.show-main-div {
+  filter: blur(24px);
+  z-index: 0;
+  position: relative;
+}
+.credits {
+  margin-top: 2rem;
+  font-size: small;
+}
+.credits p {
+  text-decoration: underline;
+}
+.credits ul > li {
+  margin: 0.5rem 0;
+}
+.credits a {
+  color: #7058AD;
+}
+.about-end {
+  margin: 2rem 0;
+}
+.about-end p {
+  font-size: small;
+}
+.weather-current {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  text-align: center;
+}
+.weather-current .weather-current-main {
+  display: flex;
+  justify-content: center;
+}
+.weather-current-tempdate {
+  display: flex;
+  flex-direction: column;
+  margin-block-start: 2rem;
+  gap: 1rem;
+  width: 20%;
+}
+.temperature {
+  font-size: 6rem;
+}
+.temp-choice-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+}
+.temp-choice-button {
+  color: #c0c0c0;
+  border: 1px solid #c0c0c0;
+  background: none;
+  padding: 0 2rem;
+  border-radius: 4px;
+}
+.active-btn {
+  border: 1px solid #f8de7e;
+}
+.weather-description {
+  text-decoration: underline #f8de7e;
+  font-size: 1.25rem;
+}
+.daily-container {
+  padding: 0 14rem;
+  margin-top: 2rem;
+}
+.daily {
+  display: grid;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+  place-content: center;
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.05);
+  padding: 1rem 0.5rem;
+}
+.todays-note,
+.rating-container,
+.sun-display,
+.moon-display {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 1.1rem;
+  margin-top: 2rem;
+  text-align: center;
+}
+.star {
+  width: 2rem;
+}
+.star:hover {
+  cursor: pointer;
+}
+.note-title {
+  margin-bottom: 1rem;
+  text-decoration: underline solid #a17ef8;
+}
+.note-p {
+  margin: 0.5rem 0;
+}
+.source-mark {
+  display: block;
+  margin-top: 2rem;
+}
+.source-text {
+  opacity: 0.5;
+  font-size: 0.75rem;
+}
+.sun-display,
+.moon-display {
+  margin-top: 6rem;
+}
+.notebox,
+.rating,
+.sun-item,
+.moon-item {
+  padding: 2rem;
+  border: 2px solid #a17ef8;
+  width: 36rem;
+  text-align: left;
+}
+.rating {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: none;
+  gap: 1rem;
+}
+.sun-item,
+.moon-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  padding: 0;
+  margin-top: 0;
+}
+.sun-time {
+  color: #f8de7e;
+}
+footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+  background-color: rgba(0, 0, 0, 0.1);
+  margin-top: 6rem;
+}
+.links {
+  display: flex;
+  gap: 1rem;
+}
+.not-found {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 18rem;
+  margin-top: 1rem;
+}
+.not-found img {
+  width: 25%;
+  background-color: #fff;
+}
+.not-found-end {
+  margin: 2rem;
+  text-align: center;
+}
+.loading {
+  display: flex;
+  justify-content: center;
+}
+@media (orientation: portrait) {
+  .temperature {
+    font-size: 3rem;
+  }
+  .weather-current-tempdate {
+    width: 45%;
+  }
+  .temp-choice-button {
+    padding: 0 1.5rem;
+  }
+  .daily-container {
+    padding: 0;
+    font-size: 0.5rem;
+  }
+  .sun-display,
+  .moon-display {
+    font-size: 1rem;
+  }
+  .sun-display h1,
+  .moon-display h1 {
+    font-size: 2rem;
+  }
+  .notebox,
+  .rating,
+  .sun-item,
+  .moon-item {
+    font-size: 1rem;
+    width: auto;
+    margin: 1rem;
+  }
+  .not-found,
+  .weather-current-main {
+    padding: 0 1rem;
+  }
+  .not-found img,
+  .weather-current-main img {
+    width: 50%;
+  }
+  .loading img {
+    width: 25%;
+  }
+}

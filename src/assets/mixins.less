@@ -1,0 +1,35 @@
+.linear-gradient-text-color {
+  color: @yellow; 
+  background-image: -webkit-linear-gradient(45deg, @yellow 25%, @purple 85%); 
+  background-clip: text; 
+  -webkit-background-clip: text; 
+  text-fill-color: transparent; 
+  -webkit-text-fill-color: transparent;
+}
+
+.bg-image {
+  background: url(src/assets/mostly-void.jpeg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+}
+
+.btn-clear {
+  background: none;
+  border: none;
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.align-centered-column-flex {
+  .flex-column();
+  align-items: center;
+}
+
+.justify-centered-flex {
+  display: flex;
+  justify-content: center;
+}

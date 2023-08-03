@@ -1,0 +1,321 @@
+@import url('https://fonts.googleapis.com/css2?family=Averia+Libre:wght@300&family=Poppins:wght@300&display=swap');
+@import './mixins.less' ;
+
+@yellow: #f8de7e;
+@purple: #a17ef8;
+@font-heading: 'Averia Libre', cursive;
+@font-body: 'Poppins', sans-serif;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100%;
+  height: 100vh;
+  .bg-image();
+  font-family: @font-body;
+  color: #fff;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+li {
+  list-style: none;
+}
+
+hr {
+  width: 100%;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  padding: .5rem;
+  .logo {
+    background: rgba(0, 0, 0, 0.1);
+  }
+}
+
+.logo-sub {
+  .linear-gradient-text-color();
+  font-size: smaller;
+  font-family: @font-heading;
+}
+
+.about {
+  display: flex;
+  align-items: center;
+  padding: .25rem 0;
+  &-container {
+    .align-centered-column-flex();
+  }
+  &-text {
+    filter: blur(0);
+    .flex-column();
+    color: #fff;
+    align-items: flex-start;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 2rem;
+  }
+}
+
+.about-btn, .goBackBtn {
+  .btn-clear();
+}
+
+.goBackBtn {
+  color: @yellow;
+  text-decoration: underline;
+  margin-top: 2rem;
+  font-size: initial;
+}
+
+.logo-title a, .about-btn a {
+  .linear-gradient-text-color();
+  text-decoration: none;
+  font-family: @font-heading;
+}
+
+.about-btn a {
+  font-size: 1rem;
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.show {
+  visibility: visible;
+  z-index: 2;
+  position: absolute;
+  top: 4rem;
+}
+
+.hide {
+  visibility: hidden;
+}
+
+.link {
+  color: @purple;
+  text-decoration: none;
+}
+
+.show-main-div {
+  filter: blur(24px);
+  z-index: 0;
+  position: relative;
+}
+
+.credits {
+  margin-top: 2rem;
+  font-size: small;
+  p {
+    text-decoration: underline;
+  }
+  ul > li {
+    margin: .5rem 0;
+  }
+  a {
+    color:  #7058AD;
+  }
+}
+
+.about-end {
+  margin: 2rem 0;
+  p {
+    font-size: small;
+  }
+}
+
+.weather-current {
+  .flex-column();
+  gap: 1rem;
+  text-align: center;
+  .weather-current-main {
+    .justify-centered-flex();
+  }
+}
+
+.weather-current-tempdate {
+  .flex-column();
+  margin-block-start: 2rem;
+  gap: 1rem;
+  width: 20%;
+}
+
+.temperature {
+  font-size: 6rem;
+}
+
+.temp-choice-buttons {
+  .justify-centered-flex();
+  gap: 8px;
+}
+
+.temp-choice-button {
+  color: #c0c0c0;
+  border: 1px solid $color;
+  background: none;
+  padding: 0 2rem;
+  border-radius: 4px;
+}
+
+.active-btn {
+  border: 1px solid @yellow;
+}
+
+.weather-description {
+  text-decoration: underline @yellow;
+  font-size: 1.25rem;
+}
+
+.daily-container {
+  padding: 0 14rem;
+  margin-top: 2rem;
+}
+
+.daily {
+  display: grid;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+  place-content: center;
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.05);
+  padding: 1rem .5rem;
+}
+
+.todays-note, .rating-container, .sun-display, .moon-display {
+  .align-centered-column-flex();
+  font-size: 1.1rem;
+  margin-top: 2rem;
+  text-align: center;
+}
+
+.star {
+  width: 2rem;
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.note-title {
+  margin-bottom: 1rem;
+  text-decoration: underline solid @purple;
+}
+
+.note-p {
+  margin: .5rem 0;
+}
+
+.source-mark {
+  display: block;
+  margin-top: 2rem;
+}
+
+.source-text {
+  opacity: 0.5;
+  font-size: .75rem;
+}
+
+.sun-display, .moon-display {
+  margin-top: 6rem;
+}
+
+.notebox, .rating, .sun-item, .moon-item {
+  padding: 2rem;
+  border: 2px solid @purple;
+  width: 36rem;
+  text-align: left;
+}
+
+.rating {
+  .align-centered-column-flex();
+  border: none;
+  gap: 1rem;
+}
+
+.sun-item, .moon-item {
+  .justify-centered-flex();
+  align-items: center;
+  border: none;
+  padding: 0;
+  margin-top: 0;
+}
+
+.sun-time {
+  color: @yellow;
+}
+
+footer {
+  .align-centered-column-flex();
+  padding: 1rem;
+  background-color: rgba(0, 0, 0, 0.1);
+  margin-top: 6rem;
+}
+
+.links {
+  display: flex;
+  gap: 1rem;
+}
+
+.not-found {
+  .align-centered-column-flex();
+  justify-content: center;
+  padding: 2rem 18rem;
+  margin-top: 1rem;
+  img {
+    width: 25%;
+    background-color: #fff;
+  }
+}
+
+.not-found-end {
+  margin: 2rem;
+  text-align: center;
+}
+
+.loading { 
+  .justify-centered-flex();
+}
+
+@media (orientation: portrait) {
+  @portrait-font-size: 1rem;
+  .temperature {
+    font-size: 3rem;
+  }
+  .weather-current-tempdate {
+    width: 45%;
+  }
+  .temp-choice-button {
+    padding: 0 1.5rem;
+  }
+  .daily-container {
+    padding: 0;
+    font-size: .5rem;
+  }
+  .sun-display, .moon-display {
+    font-size: @portrait-font-size;
+    h1 {
+      font-size: 2rem;
+    }
+  }
+  .notebox, .rating, .sun-item, .moon-item {
+    font-size: @portrait-font-size;
+    width: auto;
+    margin: 1rem;
+  }
+  .not-found, .weather-current-main {
+    padding: 0 1rem;
+    img {
+      width: 50%;
+    }
+  }
+  .loading {
+    img {
+      width: 25%;
+    }
+  }
+}
