@@ -11,7 +11,7 @@ module.exports = {
     'airbnb',
     'airbnb-typescript',
   ],
-  ignorePatterns: ['dist', '.eslintrc.cjs'],
+  ignorePatterns: ['dist', '.eslintrc.cjs', '.eslintrc.js'],
   parser: '@typescript-eslint/parser',
   parserOptions: {
     ecmaVersion: 'latest',
@@ -34,9 +34,9 @@ module.exports = {
     'react/no-array-index-key': 'off',
     'jsx-a11y/label-has-associated-control': 'off',
     'no-nested-ternary': 'off',
-    "import/no-extraneous-dependencies": ["error", {"devDependencies": true}],
+    'object-curly-newline': ['error', { 'ImportDeclaration': 'never' }],
+    'import/no-extraneous-dependencies': 'off',
     '@typescript-eslint/consistent-indexed-object-style': 'off',
     '@typescript-eslint/no-unused-expressions': ['error', { 'allowShortCircuit': true, 'allowTernary': true }],
-    'object-curly-newline': ['error', { 'ImportDeclaration': 'never' }]
   },
 }
