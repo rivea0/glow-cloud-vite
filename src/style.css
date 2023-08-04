@@ -73,7 +73,7 @@ hr {
   padding: 0.5rem;
 }
 .header .logo {
-  background: rgba(0, 0, 0, 0.1);
+  background: rgba(3, 7, 17, 0.1);
 }
 .logo-sub {
   color: #f8de7e;
@@ -84,6 +84,7 @@ hr {
   -webkit-text-fill-color: transparent;
   font-size: smaller;
   font-family: 'Averia Libre', cursive;
+  text-shadow: 2px 4px 4px rgba(229, 230, 231, 0.4);
 }
 .about {
   display: flex;
@@ -125,6 +126,7 @@ hr {
   -webkit-text-fill-color: transparent;
   text-decoration: none;
   font-family: 'Averia Libre', cursive;
+  text-shadow: 2px 4px 4px rgba(229, 230, 231, 0.4);
 }
 .about-btn a {
   font-size: 1rem;
