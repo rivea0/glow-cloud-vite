@@ -10,7 +10,7 @@ export default function NotFound() {
         </h3>
         <p className="not-found-end">So, you wait.</p>
       </div>
-      <img src="src/assets/skull.png" alt="A skull in astronaut suit waiting in space" />
+      <img src="/assets/skull.png" alt="A skull in astronaut suit waiting in space" />
     </div>
   );
 }
