@@ -3,7 +3,7 @@ import { getLocationData, getWeatherReport } from './apis';
 import { ILocationData, WeatherDataObj } from './types';
 
 export function useLocationData() {
-  const [locationDataError, setLocationDataError] = useState<null | PromiseRejectedResult>(null);
+  const [locationDataError, setLocationDataError] = useState<PromiseRejectedResult | null>(null);
   const [locationData, setLocationData] = useState<ILocationData>({
     city: '',
     country_name: '',
@@ -33,8 +33,8 @@ export function useLocationData() {
   return { locationData, locationDataError };
 }
 
-export function useWeatherData(locationData: ILocationData) {
-  const [weatherDataError, setWeatherDataError] = useState<null | PromiseRejectedResult>(null);
+export function useWeatherData(latitude: number | null, longitude: number | null) {
+  const [weatherDataError, setWeatherDataError] = useState<PromiseRejectedResult | null>(null);
   const [loading, setLoading] = useState<boolean>(true);
   const [weatherData, setWeatherData] = useState<WeatherDataObj>({
     current_weather: {
@@ -47,8 +47,8 @@ export function useWeatherData(locationData: ILocationData) {
 
   useEffect(() => {
     let ignore = false;
-    if (locationData.latitude && locationData.longitude) {
-      getWeatherReport(locationData.latitude, locationData.longitude)
+    if (latitude && longitude) {
+      getWeatherReport(latitude, longitude)
         .then((weatherReport) => {
           if (!ignore) {
             setWeatherData(() => weatherReport && {
@@ -75,7 +75,7 @@ export function useWeatherData(locationData: ILocationData) {
     return () => {
       ignore = true;
     };
-  }, [locationData]);
+  }, [latitude, longitude]);
 
   return { weatherData, weatherDataError, loading };
 }

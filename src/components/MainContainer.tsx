@@ -9,7 +9,10 @@ import Footer from './Footer';
 
 export default function MainContainer() {
   const { locationData, locationDataError } = useLocationData();
-  const { weatherData, weatherDataError, loading } = useWeatherData(locationData);
+  const { weatherData, weatherDataError, loading } = useWeatherData(
+    locationData.latitude,
+    locationData.longitude,
+  );
 
   return (
     (locationDataError ?? weatherDataError) ? (
