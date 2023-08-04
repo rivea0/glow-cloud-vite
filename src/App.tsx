@@ -17,7 +17,7 @@ export default function App() {
 
   return (
     <>
-      <div className={`main-div ${fadingOut ? 'show-main-div' : ''}`}>
+      <div className={`main-div ${fadingOut ? 'show-main-div' : ''}`} data-testid="main-div">
         <Header handleClick={handleAboutClick} />
         <MainContainer />
       </div>

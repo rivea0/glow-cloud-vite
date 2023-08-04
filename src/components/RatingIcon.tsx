@@ -17,6 +17,7 @@ export default function RatingIcon({ id, index, iconProps }: RatingIconProps) {
     <div
       id={id.toString()}
       className="cursor-pointer"
+      data-testid="star-icon"
       onMouseEnter={() => iconProps.onMouseEnter(index)}
       onMouseLeave={() => iconProps.onMouseLeave()}
       onClick={() => iconProps.onSaveRating(index)}

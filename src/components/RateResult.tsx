@@ -11,7 +11,7 @@ export default function RateResult({ starCount }: { starCount: number }) {
       <br />
       <p>Meanwhile, here are some questions to think about:</p>
       <br />
-      <ul>
+      <ul data-testid="rate-result-questions">
         <li>1. Are you skeptical of physical experience?</li>
         <li>2. Are there simultaneous, differing realities? </li>
         <li>3. Is this hard for you?</li>

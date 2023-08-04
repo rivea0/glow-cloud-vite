@@ -17,7 +17,7 @@ export default function WeatherCurrent({ currentWeatherData, city, country,
       <div className="weather-current-main">
         {slug && <Icon slug={slug} width="25%" />}
         <div className="weather-current-tempdate">
-          <p className="temperature">
+          <p className="temperature" data-testid="temperature">
             {currentWeatherData.temperature && (
             <TemperatureStr
               temp={tempChoice === 'C'
@@ -31,7 +31,7 @@ export default function WeatherCurrent({ currentWeatherData, city, country,
           <DateDisplay dateTimeStr={currentWeatherData.time} />
         </div>
       </div>
-      <p>
+      <p data-testid="weather-current-description">
         {typeof currentWeatherData.weathercode === 'number'
         && (
         <span className="weather-description">

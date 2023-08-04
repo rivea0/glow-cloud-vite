@@ -3,9 +3,8 @@ import { PropsBase } from '../types';
 export default function AboutText({ fadingOut, handleClick }: PropsBase & { fadingOut: boolean }) {
   return (
     (fadingOut && (
-      <div className="about-container">
-
-        <div className={`about-text ${fadingOut ? 'show' : 'hide'}`}>
+      <div className="about-container" data-testid="about-container">
+        <div className={`about-text ${fadingOut ? 'show' : 'hide'}`} data-testid="about-text">
           <p>
             Glow Cloud is a daily weather report, with slightly an absurd take.
             <sup>*</sup>
@@ -25,7 +24,7 @@ export default function AboutText({ fadingOut, handleClick }: PropsBase & { fadi
             {' '}
             &#128156;
           </p>
-          <div className="about-end">
+          <div className="about-end" data-testid="about-end">
             <p>
               <sup>*</sup>
               With additional information on the Sun.
@@ -38,7 +37,7 @@ export default function AboutText({ fadingOut, handleClick }: PropsBase & { fadi
             </p>
           </div>
           <hr />
-          <div className="credits">
+          <div className="credits" data-testid="credits">
             <p>Credits:</p>
             <ul>
               <li>

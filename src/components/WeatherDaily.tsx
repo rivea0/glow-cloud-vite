@@ -5,7 +5,6 @@ import TemperatureStr from './TemperatureStr';
 
 export default function WeatherDaily({ dailyWeatherData, tempChoice }:
 { dailyWeatherData: DailyValues<Daily>, tempChoice: string }) {
-  // const { daily } = weatherData;
   const dailies = zip([
     dailyWeatherData.weathercode,
     dailyWeatherData.apparent_temperature_max,
@@ -13,10 +12,10 @@ export default function WeatherDaily({ dailyWeatherData, tempChoice }:
   ]);
 
   return (
-    <div className="daily-container">
+    <div className="daily-container" data-testid="daily-container">
       <ul className="daily">
         {dailies.map((item, i) => (
-          <div key={i}>
+          <div key={i} data-testid="daily-weather">
             <li key={`${i}_0`}>
               <Icon slug={weatherCodes[item[0]].iconSlug} width="50%" />
             </li>

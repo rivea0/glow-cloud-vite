@@ -7,7 +7,7 @@ function Sunrise({ sunriseTodayDateTime }: { sunriseTodayDateTime: string | null
   return (
     <div className="sun-item">
       <Icon slug="sunrise" width="25%" />
-      <p className="">
+      <p data-testid="sunrise">
         It rises at
         {' '}
         <span className="sun-time">{sunriseTodayDateTime ? getHour(sunriseTodayDateTime) : 'who knows at what hour'}</span>
@@ -22,10 +22,10 @@ function Sunset({ sunsetTodayDateTime }: { sunsetTodayDateTime: string | null })
   return (
     <div className="sun-item">
       <Icon slug="sunset" width="25%" />
-      <p className="">
+      <p data-testid="sunset">
         It sets at
         {' '}
-        <span className="sun-time">{sunsetTodayDateTime ? getHour(sunsetTodayDateTime) : 'who knows at what hour'}</span>
+        <span className="sun-time">{sunsetTodayDateTime ? getHour(sunsetTodayDateTime) : 'who knows at what hour '}</span>
         , seems frightened. Be a shame if anything happened to it.
       </p>
     </div>
