@@ -29,17 +29,17 @@ export default function TodaysNote({ weathercode }: { weathercode: number }) {
         {(localStorage.noteStr
           ? (localStorage.noteStr as string).split('\n').map((p) => <p className="note-p" data-testid="note" key={p} style={{ margin: '.5rem 0' }}>{p}</p>)
           : note.paragraph.split('\n').map((p) => <p className="note-p" data-testid="note" key={p} style={{ margin: '.5rem 0' }}>{p}</p>))}
-        {localStorage.noteSourceUrl && localStorage.noteSourceName
-        && (
         <span className="source-mark">
           *
           <span className="source-text">
             Source of inspiration:
-            {' '}
-            <a href={(localStorage.noteSourceUrl as string)} className="link" data-testid="source-link">{localStorage.noteSourceName}</a>
+            {(
+            localStorage.noteSourceUrl || localStorage.noteSourceName
+              ? <a href={(localStorage.noteSourceUrl as string)} className="link" data-testid="source-link">{localStorage.noteSourceName}</a>
+              : <a href={(note.sourceUrl)} className="link" data-testid="source-link">{note.sourceName}</a>
+            )}
           </span>
         </span>
-        )}
       </div>
     </div>
   );
