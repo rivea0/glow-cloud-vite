@@ -1,32 +1,18 @@
 import { useEffect, useMemo } from 'react';
 import { generateRandomWeird, isInWeirdObj } from '../utils';
+import { WeatherWeirdness } from '../types';
 
 export default function TodaysNote({ weathercode }: { weathercode: number }) {
-  const todaysElement = useMemo(() => generateRandomWeird(weathercode), [weathercode]);
+  const todaysElement = useMemo<WeatherWeirdness>(
+    () => generateRandomWeird(weathercode),
+    [weathercode],
+  );
 
   const note = useMemo(() => ({
     paragraph: todaysElement.paragraph,
     sourceUrl: todaysElement.source?.url,
     sourceName: todaysElement.source?.name,
   }), [todaysElement]);
-
-  // useEffect(() => {
-  //   setNote({
-  //     paragraph: todaysElement.paragraph,
-  //     sourceUrl: todaysElement.source?.url,
-  //     sourceName: todaysElement.source?.name,
-  //   });
-  // }, [todaysElement]);
-
-  // useEffect(() => {
-  //   // if (localStorage.noteStr) {
-  //   setNote({
-  //     paragraph: todaysElement.paragraph,
-  //     sourceUrl: todaysElement.source?.url,
-  //     sourceName: todaysElement.source?.name,
-  //   });
-  //   // }
-  // }, [todaysElement]);
 
   useEffect(() => {
     if (!isInWeirdObj(localStorage.noteStr as string, weathercode)) {
