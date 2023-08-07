@@ -11,7 +11,7 @@ describe('TodaysNote', () => {
   it('should display the note', () => {
     render(<TodaysNote weathercode={0} />);
     expect(screen.getByText('A Note for Today')).toBeInTheDocument();
-    expect(screen.getByTestId('note')).not.toBeNull();
+    expect(screen.getAllByTestId('note')).not.toBeNull();
     expect(screen.getByText('Source of inspiration:')).toBeInTheDocument();
     expect(screen.getByTestId('source-link')).not.toBeNull();
   });
