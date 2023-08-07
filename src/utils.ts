@@ -1,4 +1,5 @@
-import { DateTime } from './types';
+import { DateTime, WeatherWeirdness } from './types';
+import weird from './weird';
 
 // See https://open-meteo.com/en/docs
 export const weatherCodes: Record<number, Record<'description' | 'iconSlug', string>> = {
@@ -155,4 +156,43 @@ export function getSlug(weathercode: number | null) {
     slug = weatherCodes[weathercode].iconSlug;
   }
   return slug;
+}
+
+export function getCollectionSource(weathercode: number) {
+  const todaysWeather = weatherCodes[weathercode].iconSlug;
+  let collectionSource: WeatherWeirdness[];
+  switch (todaysWeather) {
+    case 'clear-day':
+      collectionSource = weird.sun;
+      break;
+    case 'overcast':
+      collectionSource = weird.overcast;
+      break;
+    case 'fog':
+      collectionSource = weird.fog;
+      break;
+    case 'rain':
+      collectionSource = weird.rain;
+      break;
+    default:
+      collectionSource = weird.misc;
+  }
+  return collectionSource;
+}
+
+export function generateRandomWeird(weathercode: number) {
+  const collectionSource = getCollectionSource(weathercode);
+  const thisOne = collectionSource[Math.floor(Math.random() * collectionSource.length)];
+  return thisOne;
+}
+
+export function isInWeirdObj(str: string, weathercode: number) {
+  const collectionSource = getCollectionSource(weathercode);
+  let flag = false;
+  collectionSource.forEach((obj) => {
+    if (obj.paragraph === str) {
+      flag = true;
+    }
+  });
+  return flag;
 }
