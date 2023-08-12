@@ -5,7 +5,7 @@
 <div align="center">
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/b79b2b48-3a9c-4884-a079-483f7320dad1/deploy-status?branch=main)](https://app.netlify.com/sites/glowcloud/deploys?branch=main)
-![GitHub](https://img.shields.io/github/license/rivea0/glow-cloud?color=8978F3&link=https%3A%2F%2Fgithub.com%2Frivea0%2Fglow-cloud%2Fblob%2Fmain%2FLICENSE)
+![GitHub](https://img.shields.io/github/license/rivea0/glow-cloud?color=8978F3)
 
 <h2>Glow Cloud</h2>
 <p><em>Daily weather report with a *slightly* absurd take</em>.</p>
