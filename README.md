@@ -4,7 +4,7 @@
 
 <div align="center">
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/b79b2b48-3a9c-4884-a079-483f7320dad1/deploy-status?branch=main)](https://app.netlify.com/sites/glowcloud/deploys?branch=main)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/e9787add-9609-492f-b8fd-525109266fc9/deploy-status)](https://app.netlify.com/sites/glowcloud-vite/deploys?branch=main)
 ![GitHub](https://img.shields.io/github/license/rivea0/glow-cloud?color=8978F3)
 
 <h2>Glow Cloud</h2>
@@ -35,12 +35,12 @@ All hail the mighty Glow Cloud!
 
 Clone the repository:
 ```
-git clone git@github.com:rivea0/glow-cloud.git
+git clone git@github.com:rivea0/glow-cloud-vite.git
 ```
 
 `cd` into it:
 ```
-cd glow-cloud
+cd glow-cloud-vite
 ```
 
 Install dependencies:
