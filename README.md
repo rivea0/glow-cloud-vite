@@ -5,7 +5,7 @@
 <div align="center">
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/e9787add-9609-492f-b8fd-525109266fc9/deploy-status)](https://app.netlify.com/sites/glowcloud-vite/deploys?branch=main)
-![GitHub](https://img.shields.io/github/license/rivea0/glow-cloud?color=8978F3)
+![GitHub](https://img.shields.io/github/license/rivea0/glow-cloud-vite?color=8978F3)
 
 <h2>Glow Cloud</h2>
 <p><em>Daily weather report with a *slightly* absurd take</em>.</p>
