@@ -32,13 +32,15 @@ weatherDataError: null,
 loading: false };
 
 describe('MainContainer', () => {
-  let mockUseLocationData: MockInstance<[], {
-    locationData: ILocationData; locationDataError: PromiseRejectedResult | null | undefined;
-  }>;
+  // let mockUseLocationData: MockInstance<[], {
+  //   locationData: ILocationData; locationDataError: PromiseRejectedResult | null | undefined;
+  // }>;
+  let mockUseLocationData: MockInstance<[]>;
 
-  let mockUseWeatherData: MockInstance<[latitude: number | null, longitude: number | null],
-  { weatherData: WeatherDataObj;
-    weatherDataError: PromiseRejectedResult | null; loading: boolean; }>;
+  // let mockUseWeatherData: MockInstance<[latitude: number | null, longitude: number | null],
+  // { weatherData: WeatherDataObj;
+  //   weatherDataError: PromiseRejectedResult | null; loading: boolean; }>;
+  let mockUseWeatherData: MockInstance<[latitude: number | null, longitude: number | null]>;
 
   beforeEach(() => {
     mockUseLocationData = vi.spyOn(
