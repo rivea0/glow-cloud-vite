@@ -31,16 +31,22 @@ daily: {
 weatherDataError: null,
 loading: false };
 
-describe('MainContainer', () => {
-  // let mockUseLocationData: MockInstance<[], {
-  //   locationData: ILocationData; locationDataError: PromiseRejectedResult | null | undefined;
-  // }>;
-  let mockUseLocationData: MockInstance<[]>;
+interface LocationHookReturn {
+  locationData: ILocationData;
+  locationDataError: PromiseRejectedResult | null | undefined;
+}
 
-  // let mockUseWeatherData: MockInstance<[latitude: number | null, longitude: number | null],
-  // { weatherData: WeatherDataObj;
-  //   weatherDataError: PromiseRejectedResult | null; loading: boolean; }>;
-  let mockUseWeatherData: MockInstance<[latitude: number | null, longitude: number | null]>;
+interface WeatherHookReturn {
+  weatherData: WeatherDataObj;
+  weatherDataError: PromiseRejectedResult | null;
+  loading: boolean;
+}
+
+describe('MainContainer', () => {
+  let mockUseLocationData: MockInstance<[], LocationHookReturn>;
+
+  let mockUseWeatherData: MockInstance<[latitude: number | null, longitude: number | null],
+  WeatherHookReturn>;
 
   beforeEach(() => {
     mockUseLocationData = vi.spyOn(
