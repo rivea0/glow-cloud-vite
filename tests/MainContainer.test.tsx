@@ -1,4 +1,5 @@
-import { describe, vi, SpyInstance } from 'vitest';
+import { describe, vi } from 'vitest';
+import type { MockInstance } from 'vitest';
 import { render } from '@testing-library/react';
 import MainContainer from '../src/components/MainContainer';
 import * as customHooks from '../src/customHooks';
@@ -31,11 +32,11 @@ weatherDataError: null,
 loading: false };
 
 describe('MainContainer', () => {
-  let mockUseLocationData: SpyInstance<[], {
+  let mockUseLocationData: MockInstance<[], {
     locationData: ILocationData; locationDataError: PromiseRejectedResult | null | undefined;
   }>;
 
-  let mockUseWeatherData: SpyInstance<[latitude: number | null, longitude: number | null],
+  let mockUseWeatherData: MockInstance<[latitude: number | null, longitude: number | null],
   { weatherData: WeatherDataObj;
     weatherDataError: PromiseRejectedResult | null; loading: boolean; }>;
 
