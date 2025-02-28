@@ -42,11 +42,12 @@ interface WeatherHookReturn {
   loading: boolean;
 }
 
-describe('MainContainer', () => {
-  let mockUseLocationData: MockInstance<[], LocationHookReturn>;
+type LocationHookFn = () => LocationHookReturn;
+type WeatherHookFn = (latitude: number | null, longitude: number | null) => WeatherHookReturn;
 
-  let mockUseWeatherData: MockInstance<[latitude: number | null, longitude: number | null],
-  WeatherHookReturn>;
+describe('MainContainer', () => {
+  let mockUseLocationData: MockInstance<LocationHookFn>;
+  let mockUseWeatherData: MockInstance<WeatherHookFn>;
 
   beforeEach(() => {
     mockUseLocationData = vi.spyOn(
